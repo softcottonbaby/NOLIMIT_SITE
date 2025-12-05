@@ -1,0 +1,252 @@
+/* Custom CSS Variables for easy maintenance and theming */
+:root {
+    --bg-color: #000000;
+    --bg-content-color: #050505; /* Slightly lighter black for content areas */
+    --primary-color: #00CCFF; /* A slightly softer electric blue */
+    --glitch-red: #FF0000;
+    --glitch-blue: #0033FF;
+    /* Helvetica-based professional font stack */
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --text-size: 8vw;
+    --text-shadow-glow: 0 0 10px var(--primary-color), 0 0 20px rgba(0, 204, 255, 0.4);
+    --border-glow: 0 0 5px var(--primary-color);
+}
+
+/* --- Global Reset and Body Styling --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    display: flex; /* Flex is used initially for centering the hero */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    transition: background-color 0.5s ease;
+}
+
+/* Style for when JS switches the body to allow scrolling */
+body.content-active {
+    display: block;
+    overflow-y: scroll;
+}
+
+/* --- Content Visibility Utility --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Professional Screen Overlay (Subtle Scanlines/CRT effect) --- */
+
+.screen-overlay::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.3) 1px,
+        transparent 1px,
+        transparent 2px 
+    );
+    background-size: 100% 4px; 
+    pointer-events: none; 
+    z-index: 9999;
+    opacity: 0.1; 
+}
+
+/* --- Navigation Bar --- */
+#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Slight transparency */
+    border-bottom: 1px solid rgba(0, 204, 255, 0.1);
+    box-shadow: var(--border-glow);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    transform: translateY(-100%); /* Initially hide, GSAP will bring it down */
+    opacity: 0;
+}
+
+.nav-logo {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-shadow: var(--border-glow);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 40px;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #FFFFFF; /* White on hover */
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* --- Hero Intro Section --- */
+.hero-container {
+    text-align: center;
+    overflow: hidden; 
+    height: 100vh; /* Takes up full viewport height initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.glitch-text {
+    font-size: var(--text-size);
+    font-weight: 900; 
+    text-transform: uppercase;
+    text-shadow: var(--text-shadow-glow);
+    position: relative;
+    opacity: 1; 
+    color: var(--primary-color); 
+    transition: none; 
+}
+
+/* Pseudo-elements for Glitch/Chromatic Aberration */
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-glitch); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-shadow: var(--text-shadow-glow);
+    opacity: 0; 
+    transition: none;
+}
+
+.glitch-text::before {
+    color: var(--glitch-red);
+    mix-blend-mode: screen; 
+}
+
+.glitch-text::after {
+    color: var(--glitch-blue);
+    mix-blend-mode: screen; 
+}
+
+/* --- Typing Cursor Styling (The Pipeline) --- */
+
+#cursor {
+    font-size: var(--text-size);
+    font-weight: 900;
+    color: var(--primary-color);
+    opacity: 1;
+    position: absolute;
+    animation: none; 
+    text-shadow: 0 0 5px var(--primary-color);
+    margin-left: 0; 
+    z-index: 10; 
+}
+
+@keyframes blink-anim {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* --- Main Content Structure --- */
+#portfolio-content {
+    /* Set max width for professional, readable content */
+    max-width: 1200px; 
+    width: 90%;
+    margin: 50px auto 100px auto; /* Top margin for spacing below nav */
+    padding-top: 50px; /* Space below the fixed nav bar */
+    /* This section is hidden initially and revealed by JS */
+}
+
+.content-section {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(0, 204, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: var(--border-glow);
+    color: #FFFFFF;
+}
+
+/* General Text Styling */
+p, li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Project Grid Placeholder */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--bg-content-color);
+    padding: 30px;
+    border: 1px solid rgba(0, 204, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 204, 255, 0.3), var(--border-glow);
+}
+
+/* Contact Button */
+.contact-button {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 15px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: var(--border-glow);
+}

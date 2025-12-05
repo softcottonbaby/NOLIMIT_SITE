@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOLIMIT Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body class="screen-overlay">
+    
+    <nav id="main-nav">
+        <div class="nav-logo">NOLIMIT</div>
+        <ul class="nav-links">
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-container">
+        <h1 id="nolimit-text" class="glitch-text" data-glitch="NOLIMIT"></h1>
+    </header>
+
+    <span id="cursor">|</span>
+
+    <main id="portfolio-content" class="hidden">
+        
+        <section id="about" class="content-section">
+            <h2>// About Me</h2>
+            <p>A professional software developer focused on creating clean, high-performance web applications and digital experiences.</p>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2>// Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">Project 1</div>
+                <div class="project-card">Project 2</div>
+                <div class="project-card">Project 3</div>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2>// Technical Skills</h2>
+            <ul class="skills-list">
+                <li>JavaScript (ES6+)</li>
+                <li>React / Next.js</li>
+                <li>CSS / SCSS / GSAP</li>
+                <li>Node.js / Express</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>// Contact</h2>
+            <p>Ready to collaborate? Let's build something without limits.</p>
+            <a href="mailto:your@email.com" class="contact-button">Send an Email</a>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
