@@ -3,64 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOLIMIT Portfolio</title>
+    <title>NOLIMIT | Digital Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
 </head>
-<body class="screen-overlay">
-    
+<body class="loading-state">
+
+    <div class="noise-overlay"></div>
+    <div class="scanline-overlay"></div>
+
+    <div id="loader-overlay">
+        <div class="loader-bg-glow"></div>
+        <div class="loader-content">
+            <div class="terminal-line">
+                <span class="prompt">></span>
+                <span id="typewriter-text"></span><span class="cursor">_</span>
+            </div>
+            <div class="loader-progress-track">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loading-status">SYSTEM INITIALIZING...</div>
+        </div>
+    </div>
+
     <nav id="main-nav">
-        <div class="nav-logo">NOLIMIT</div>
-        <ul class="nav-links">
-            <li><a href="#about" class="active">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">NO<span class="highlight">LIMIT</span></a>
+            <ul class="nav-links">
+                <li><a href="#projects" class="nav-item">Work</a></li>
+                <li><a href="#skills" class="nav-item">Expertise</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
+        </div>
     </nav>
 
-    <header class="hero-container">
-        <h1 id="nolimit-text" class="glitch-text" data-glitch="NOLIMIT"></h1>
-    </header>
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
 
-    <span id="cursor">|</span>
+            <header class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-subtitle">// MANAGER EXPERIENCE</h2>
+                    <h1 class="hero-title glitch-hover" data-text="NOLIMIT PORTFOLIO">
+                        NO<span class="highlight">LIMIT</span><br>PORTFOLIO
+                    </h1>
+                    <p class="hero-desc">
+                        Providing professional management in any kind of server.
+                    </p>
+                    <div class="scroll-indicator">
+                        <span>SCROLL</span>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </header>
 
-    <main id="portfolio-content" class="hidden">
-        
-        <section id="about" class="content-section">
-            <h2>// About Me</h2>
-            <p>A professional software developer focused on creating clean, high-performance web applications and digital experiences.</p>
-        </section>
+            <section id="projects" class="section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-number">01</span>
+                        <h2 class="section-title">Selected Work</h2>
+                    </div>
+                    
+                    <div class="project-grid">
+                        <article class="project-card">
+                            <div class="card-inner">
+                                <div class="card-content">
+                                    <h3>Neon Finance</h3>
+                                    <p>DeFi dashboard with real-time WebGL data visualization.</p>
+                                    <ul class="tech-stack">
+                                        <li>React</li>
+                                        <li>Three.js</li>
+                                        <li>D3.js</li>
+                                    </ul>
+                                    <a href="#" class="project-link">View Case Study -></a>
+                                </div>
+                                <div class="card-decoration"></div>
+                            </div>
+                        </article>
 
-        <section id="projects" class="content-section">
-            <h2>// Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">Project 1</div>
-                <div class="project-card">Project 2</div>
-                <div class="project-card">Project 3</div>
-            </div>
-        </section>
+                        <article class="project-card">
+                            <div class="card-inner">
+                                <div class="card-content">
+                                    <h3>Cyber Security AI</h3>
+                                    <p>Predictive threat analysis interface for enterprise clients.</p>
+                                    <ul class="tech-stack">
+                                        <li>Vue</li>
+                                        <li>Python</li>
+                                        <li>TensorFlow</li>
+                                    </ul>
+                                    <a href="#" class="project-link">View Case Study -></a>
+                                </div>
+                                <div class="card-decoration"></div>
+                            </div>
+                        </article>
 
-        <section id="skills" class="content-section">
-            <h2>// Technical Skills</h2>
-            <ul class="skills-list">
-                <li>JavaScript (ES6+)</li>
-                <li>React / Next.js</li>
-                <li>CSS / SCSS / GSAP</li>
-                <li>Node.js / Express</li>
-            </ul>
-        </section>
+                         <article class="project-card">
+                            <div class="card-inner">
+                                <div class="card-content">
+                                    <h3>Orbit Commerce</h3>
+                                    <p>Headless e-commerce solution with 3D product configurators.</p>
+                                    <ul class="tech-stack">
+                                        <li>Next.js</li>
+                                        <li>Shopify</li>
+                                        <li>WebGL</li>
+                                    </ul>
+                                    <a href="#" class="project-link">View Case Study -></a>
+                                </div>
+                                <div class="card-decoration"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-        <section id="contact" class="content-section">
-            <h2>// Contact</h2>
-            <p>Ready to collaborate? Let's build something without limits.</p>
-            <a href="mailto:your@email.com" class="contact-button">Send an Email</a>
-        </section>
+            <section id="skills" class="section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-number">02</span>
+                        <h2 class="section-title">Technical Arsenal</h2>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-column">
+                            <h3>Frontend</h3>
+                            <div class="skill-bar"><div class="fill" style="width: 95%"></div><span>JavaScript (ES6+)</span></div>
+                            <div class="skill-bar"><div class="fill" style="width: 90%"></div><span>React / Next.js</span></div>
+                            <div class="skill-bar"><div class="fill" style="width: 85%"></div><span>GSAP / WebGL</span></div>
+                        </div>
+                        <div class="skill-column">
+                            <h3>Backend</h3>
+                            <div class="skill-bar"><div class="fill" style="width: 80%"></div><span>Node.js</span></div>
+                            <div class="skill-bar"><div class="fill" style="width: 75%"></div><span>Python / Django</span></div>
+                            <div class="skill-bar"><div class="fill" style="width: 85%"></div><span>SQL / Postgres</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <section id="contact" class="section-padding footer-section">
+                <div class="container">
+                    <h2 class="footer-cta">Ready to go<br><span class="highlight">No Limit?</span></h2>
+                    <a href="mailto:contact@nolimit.com" class="big-button">
+                        <span class="btn-text">Initialize Project</span>
+                        <span class="btn-glitch">Initialize Project</span>
+                    </a>
+                    
+                    <footer class="main-footer">
+                        <div class="copyright">© 2024 NOLIMIT. All Systems Operational.</div>
+                        <div class="socials">
+                            <a href="#">Github</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </footer>
+                </div>
+            </section>
+
+        </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
