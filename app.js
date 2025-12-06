@@ -23,7 +23,7 @@ function initLoader() {
     // 2. Typewriter Effect
     let charIndex = 0;
     loaderTl.to({}, {
-        duration: 0.4, 
+        duration: 0.2, 
         repeat: textToType.length - 1,
         onRepeat: () => {
             charIndex++;

@@ -98,7 +98,8 @@ body {
     letter-spacing: 1px;
 }
 
-.prompt { color: var(--secondary); margin-right: 10px; }
+/* CHANGED: Switched to primary (blue) */
+.prompt { color: var(--primary); margin-right: 10px; }
 
 #typewriter-text {
     color: #fff;
@@ -252,15 +253,16 @@ body {
 }
 
 /* --- HERO TITLE --- */
+/* --- HERO TITLE --- */
 .hero-title {
     font-size: 8vw;
     line-height: 0.9;
     font-weight: 900;
     margin-bottom: 30px;
     position: relative;
-    /* Solid White + Slight Glow by default */
     color: #FFFFFF; 
-    text-shadow: 0 0 10px rgba(255,255,255,0.2); 
+    /* CHANGED: Increased opacity and blur for a brighter white glow */
+    text-shadow: 0 0 25px rgba(255,255,255,0.6); 
     -webkit-text-stroke: 0px; 
     transition: all 0.4s var(--easing);
     cursor: default;
@@ -269,8 +271,9 @@ body {
 /* Ensure the blue LIMIT word glows blue, not white */
 .hero-title .highlight {
     color: var(--primary);
-    text-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-    display: inline-block; /* Helps with transforms */
+    /* CHANGED: Increased opacity and blur for a brighter blue glow */
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.8);
+    display: inline-block; 
     transition: all 0.4s var(--easing);
 }
 
