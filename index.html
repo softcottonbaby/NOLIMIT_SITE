@@ -1,171 +1,422 @@
 <!DOCTYPE html>
-<html lang="en"> 
-    // ytes
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOLIMIT | Digital Architect</title>
+    <title>NOLIMIT | Streamer Management</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body class="loading-state">
+<body>
 
-    <div class="noise-overlay"></div>
-    <div class="scanline-overlay"></div>
-
-    <div id="loader-overlay">
-        <div class="loader-bg-glow"></div>
+    <div id="loading-screen">
+        <div class="loader-bg-glow">
+            <div class="light-source ls-1"></div>
+            <div class="light-source ls-2"></div>
+        </div>
+        
         <div class="loader-content">
-            <div class="terminal-line">
-                <span class="prompt">></span>
-                <span id="typewriter-text"></span><span class="cursor">_</span>
+            <h1 class="loader-logo">NO<span>LIMIT</span></h1>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
             </div>
-            <div class="loader-progress-track">
-                <div class="progress-bar"></div>
-            </div>
-            <div class="loading-status">SYSTEM INITIALIZING...</div>
         </div>
     </div>
 
-    <nav id="main-nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">NO<span class="highlight">LIMIT</span></a>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">NO<span>LIMIT</span></a>
             <ul class="nav-links">
-                <li><a href="#projects" class="nav-item">Work</a></li>
-                <li><a href="#skills" class="nav-item">Expertise</a></li>
-                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#vouches">Vouches</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#streamers">Streamers</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-cta">Let's Talk</a>
+            <a href="#contact" class="btn btn-primary">Get Started</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
-    <main id="smooth-wrapper">
-        <div id="smooth-content">
+    <header class="hero">
+        <div class="container hero-content fade-in">
+            <div class="badge">
+                <span class="dot"></span> Streamer Manager
+            </div>
+            <h1 class="hero-title">NO<span>LIMIT</span></h1>
+            <p class="hero-subtitle">
+                Elevating streamers to new heights through strategic management, brand partnerships, and community growth.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary"><i class="far fa-comment-dots"></i> Get in Touch</a>
+                <a href="#about" class="btn btn-secondary">Learn More <i class="fas fa-arrow-down"></i></a>
+            </div>
 
-            <header class="hero-section">
-                <div class="hero-content">
-                    <h2 class="hero-subtitle">// MANAGER EXPERIENCE</h2>
-                    <h1 class="hero-title glitch-hover" data-text="NOLIMIT PORTFOLIO">
-                        NO<span class="highlight">LIMIT</span><br>PORTFOLIO
-                    </h1>
-                    <p class="hero-desc">
-                        Providing professional management in any kind of server.
-                    </p>
-                    <div class="scroll-indicator">
-                        <span>SCROLL</span>
-                        <div class="line"></div>
-                    </div>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="10" data-suffix="+">0</h3>
+                    <p>Streamers Managed</p>
                 </div>
-            </header>
-
-            <section id="projects" class="section-padding">
-                <div class="container">
-                    <div class="section-header">
-                        <span class="section-number">01</span>
-                        <h2 class="section-title">Selected Work</h2>
-                    </div>
-                    
-                    <div class="project-grid">
-                        <article class="project-card">
-                            <div class="card-inner">
-                                <div class="card-content">
-                                    <h3>Neon Finance</h3>
-                                    <p>DeFi dashboard with real-time WebGL data visualization.</p>
-                                    <ul class="tech-stack">
-                                        <li>React</li>
-                                        <li>Three.js</li>
-                                        <li>D3.js</li>
-                                    </ul>
-                                    <a href="#" class="project-link">View Case Study -></a>
-                                </div>
-                                <div class="card-decoration"></div>
-                            </div>
-                        </article>
-
-                        <article class="project-card">
-                            <div class="card-inner">
-                                <div class="card-content">
-                                    <h3>Cyber Security AI</h3>
-                                    <p>Predictive threat analysis interface for enterprise clients.</p>
-                                    <ul class="tech-stack">
-                                        <li>Vue</li>
-                                        <li>Python</li>
-                                        <li>TensorFlow</li>
-                                    </ul>
-                                    <a href="#" class="project-link">View Case Study -></a>
-                                </div>
-                                <div class="card-decoration"></div>
-                            </div>
-                        </article>
-
-                         <article class="project-card">
-                            <div class="card-inner">
-                                <div class="card-content">
-                                    <h3>Orbit Commerce</h3>
-                                    <p>Headless e-commerce solution with 3D product configurators.</p>
-                                    <ul class="tech-stack">
-                                        <li>Next.js</li>
-                                        <li>Shopify</li>
-                                        <li>WebGL</li>
-                                    </ul>
-                                    <a href="#" class="project-link">View Case Study -></a>
-                                </div>
-                                <div class="card-decoration"></div>
-                            </div>
-                        </article>
-                    </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="500" data-suffix="K+">0</h3>
+                    <p>Combined Followers</p>
                 </div>
-            </section>
-
-            <section id="skills" class="section-padding">
-                <div class="container">
-                    <div class="section-header">
-                        <span class="section-number">02</span>
-                        <h2 class="section-title">Technical Arsenal</h2>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-column">
-                            <h3>Frontend</h3>
-                            <div class="skill-bar"><div class="fill" style="width: 95%"></div><span>JavaScript (ES6+)</span></div>
-                            <div class="skill-bar"><div class="fill" style="width: 90%"></div><span>React / Next.js</span></div>
-                            <div class="skill-bar"><div class="fill" style="width: 85%"></div><span>GSAP / WebGL</span></div>
-                        </div>
-                        <div class="skill-column">
-                            <h3>Backend</h3>
-                            <div class="skill-bar"><div class="fill" style="width: 80%"></div><span>Node.js</span></div>
-                            <div class="skill-bar"><div class="fill" style="width: 75%"></div><span>Python / Django</span></div>
-                            <div class="skill-bar"><div class="fill" style="width: 85%"></div><span>SQL / Postgres</span></div>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="50" data-suffix="+">0</h3>
+                    <p>Brand Deals Closed</p>
                 </div>
-            </section>
-
-            <section id="contact" class="section-padding footer-section">
-                <div class="container">
-                    <h2 class="footer-cta">Ready to go<br><span class="highlight">No Limit?</span></h2>
-                    <a href="mailto:contact@nolimit.com" class="big-button">
-                        <span class="btn-text">Initialize Project</span>
-                        <span class="btn-glitch">Initialize Project</span>
-                    </a>
-                    
-                    <footer class="main-footer">
-                        <div class="copyright">© 2024 NOLIMIT. All Systems Operational.</div>
-                        <div class="socials">
-                            <a href="#">Github</a>
-                            <a href="#">LinkedIn</a>
-                            <a href="#">Twitter</a>
-                        </div>
-                    </footer>
-                </div>
-            </section>
-
+            </div>
+            
+            <div class="scroll-indicator-container">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
         </div>
-    </main>
+    </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="app.js"></script>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-tag">ABOUT ME</p>
+                <h2>Your Partner in <span>Success</span></h2>
+                <p class="section-desc-center">With years of experience in the streaming industry, I help content creators focus on what they do best while I handle the business side.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-card hidden">
+                    <div class="card-bg"></div>
+                    <div class="nl-watermark">NL</div>
+                    <div class="est-badge">Est. 2020</div>
+                    <div class="circle-deco top-right"></div>
+                    <div class="circle-deco bottom-left"></div>
+                </div>
+                <div class="about-text hidden delay-1">
+                    <h3>Turning Passion into Profession</h3>
+                    <p>As NOLIMIT, I specialize in managing Discord-based streamers and content creators. My approach combines industry expertise with personalized attention to each creator's unique brand and goals.</p>
+                    <p>From negotiating sponsorship deals to coordinating community events, I handle the behind-the-scenes work so my clients can focus on creating amazing content for their audiences.</p>
+                    
+                    <div class="trust-row">
+                        <div class="avatars">
+                            <img src="avatars%20top/cheesycheese.webp" alt="Creator 1">
+                            <img src="avatars%20top/headed.webp" alt="Creator 2">
+                            <img src="avatars%20top/icesol.webp" alt="Creator 3">
+                            <img src="avatars%20top/yungreal.webp" alt="Creator 4">
+                        </div>
+                        <p>Trusted by top creators</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vouches" class="vouches-section">
+        <div class="container">
+            <div class="section-header text-center hidden">
+                <p class="section-tag">TESTIMONIALS</p>
+                <h2>Client <span>Vouches</span></h2>
+            </div>
+        </div>
+        
+        <div class="marquee-wrapper hidden delay-1">
+            <div class="marquee-track" id="marquee-track">
+                <p class="loading-text">Loading reviews...</p>
+            </div>
+        </div>
+
+        <div class="vouch-buttons text-center fade-in">
+            <button id="open-add-modal" class="btn btn-primary">Add Vouch <i class="fas fa-plus"></i></button>
+            <button id="open-view-modal" class="btn btn-secondary">See All Vouches <i class="fas fa-list"></i></button>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header text-center hidden">
+                <h2>What I <span>Offer</span></h2>
+                <p class="section-desc-center">Comprehensive management services designed to help streamers grow their brand and maximize their potential.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card hidden">
+                    <div class="icon-box"><i class="far fa-handshake"></i></div>
+                    <span class="pill">Popular</span>
+                    <h3>Brand Partnerships</h3>
+                    <p>Connecting you with brands that align with your content and values for authentic collaborations.</p>
+                </div>
+                <div class="service-card hidden delay-1">
+                    <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Social Media Strategy</h3>
+                    <p>Comprehensive strategies to grow your presence across Twitch, YouTube, and Discord.</p>
+                </div>
+                <div class="service-card hidden delay-2">
+                    <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Deep analysis of your performance metrics to optimize content and engagement.</p>
+                </div>
+                <div class="service-card hidden">
+                    <div class="icon-box"><i class="far fa-calendar-alt"></i></div>
+                    <h3>Event Coordination</h3>
+                    <p>Planning and executing community events, collabs, and special streams.</p>
+                </div>
+                <div class="service-card hidden delay-1">
+                    <div class="icon-box"><i class="fas fa-users"></i></div>
+                    <h3>Community Management</h3>
+                    <p>Building and moderating healthy, engaged communities that support your growth.</p>
+                </div>
+                <div class="service-card hidden delay-2">
+                    <div class="icon-box"><i class="fas fa-file-contract"></i></div>
+                    <h3>Contract Negotiation</h3>
+                    <p>Expert negotiation to ensure you get the best deals and fair terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-card hidden">
+                    <div class="icon-box small"><i class="fas fa-user-friends"></i></div>
+                    <h3>Community Focus</h3>
+                    <p>Building and nurturing engaged communities that support your brand long-term.</p>
+                </div>
+                <div class="value-card hidden delay-1">
+                    <div class="icon-box small"><i class="fas fa-bullseye"></i></div>
+                    <h3>Strategic Growth</h3>
+                    <p>Data-driven strategies to maximize reach and engagement across platforms.</p>
+                </div>
+                <div class="value-card hidden delay-2">
+                    <div class="icon-box small"><i class="fas fa-chart-line"></i></div>
+                    <h3>Revenue Optimization</h3>
+                    <p>Identifying and securing the best sponsorship and partnership opportunities.</p>
+                </div>
+                <div class="value-card hidden delay-3">
+                    <div class="icon-box small"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Brand Protection</h3>
+                    <p>Maintaining your reputation and ensuring all partnerships align with your values.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="streamers" class="portfolio-section">
+        <div class="container">
+            <div class="section-header text-center hidden">
+                <p class="section-tag">PORTFOLIO</p>
+                <h2>Managed <span>Creators</span></h2>
+                <p class="section-desc-center">A selection of talented streamers I have the privilege of working with.</p>
+            </div>
+
+            <div class="creators-grid">
+                <div class="creator-card hidden">
+                    <div class="avatar">
+                        <img src="avatars%20top/cheesycheese.webp" alt="ShadowBlade">
+                        <div class="platform-icon kick-bg">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M3 3h4.5v7.2h.3l5.2-7.2H18l-5.7 7.6L18.8 21h-5.4l-5.7-7.9h-.3v7.9H3V3Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>CheesyCheeese</h3>
+                    <p class="genre">IRL and Slots</p>
+                    <div class="follower-pill">843 followers</div>
+                </div>
+                <div class="creator-card hidden delay-1">
+                    <div class="avatar">
+                        <img src="avatars%20top/headed.webp" alt="NeonQueen">
+                        <div class="platform-icon kick-bg">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M3 3h4.5v7.2h.3l5.2-7.2H18l-5.7 7.6L18.8 21h-5.4l-5.7-7.9h-.3v7.9H3V3Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>Headed</h3>
+                    <p class="genre">Gambling</p>
+                    <div class="follower-pill">1.4K followers</div>
+                </div>
+                <div class="creator-card hidden delay-2">
+                    <div class="avatar">
+                        <img src="avatars%20top/icesol.webp" alt="CyberWolf">
+                        <div class="platform-icon kick-bg">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M3 3h4.5v7.2h.3l5.2-7.2H18l-5.7 7.6L18.8 21h-5.4l-5.7-7.9h-.3v7.9H3V3Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>IceSol</h3>
+                    <p class="genre">Gambling</p>
+                    <div class="follower-pill">14.8K followers</div>
+                </div>
+                <div class="creator-card hidden delay-3">
+                    <div class="avatar">
+                        <img src="avatars%20top/yungreal.webp" alt="StormRider">
+                        <div class="platform-icon kick-bg">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M3 3h4.5v7.2h.3l5.2-7.2H18l-5.7 7.6L18.8 21h-5.4l-5.7-7.9h-.3v7.9H3V3Z"/></svg>
+                        </div>
+                    </div>
+                    <h3>yungreal</h3>
+                    <p class="genre">IRL and Slots</p>
+                    <div class="follower-pill">28.6kK followers</div>
+                </div>
+            </div>
+
+            <div class="roster-cta hidden">
+                <p>Want tme to join your team?</p>
+                <a href="#contact" class="link-text">Let's talk <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center hidden">
+                <p class="section-tag">CONTACT</p>
+                <h2>Let's Work <span>Together</span></h2>
+                <p class="section-desc-center">Ready to take your streaming career to the next level? Get in touch and let's discuss how I can help.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form-wrapper hidden">
+                    <h3>Send a Message</h3>
+                    <form id="contact-form" action="https://formspree.io/f/mdkqlkbe" method="POST" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Discord Tag</label>
+                                <input type="text" name="discord" placeholder="username#0000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" placeholder="Tell me about yourself..." required></textarea>
+                        </div>
+                        
+                        <div id="form-status" class="form-status"></div>
+
+                        <button type="submit" class="btn btn-primary full-width">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper hidden delay-1">
+                    <h3>Get in Touch</h3>
+                    <p class="info-desc">Whether you're an established streamer looking to grow or just starting out, I'm here to help you navigate the industry and achieve your goals.</p>
+                    
+                    <div class="info-card">
+                        <div class="icon-box small"><i class="fab fa-discord"></i></div>
+                        <div>
+                            <span class="label">Discord</span>
+                            <h4>nolimitmbappe</h4>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-box small"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="label">Email</span>
+                            <h4>contact@nolimit.gg</h4>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-box small"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <span class="label">Timezone</span>
+                            <h4>Available Always</h4>
+                        </div>
+                    </div>
+
+                    <div class="quick-response-box">
+                        <span class="status-dot"></span>
+                        <div>
+                            <h4>Quick Response</h4>
+                            <p>I typically respond within 24 hours. For urgent matters, reach out via Discord.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#" class="logo">NO<span>LIMIT</span></a>
+                <p>Streamer Management & Growth</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 NOLIMIT. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="add-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Vouch</h3>
+            
+            <div id="modal-loader" class="modal-loader hidden">
+                <div class="spinner"></div>
+                <p>Uploading & Saving...</p>
+            </div>
+
+            <form id="add-vouch-form">
+                <div class="form-group">
+                    <label>Admin Password</label>
+                    <input type="password" id="vouch-password" placeholder="Enter password..." required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Client Name</label>
+                        <input type="text" id="vouch-name" placeholder="e.g. Ninja" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Profile Picture (Optional)</label>
+                        <label for="vouch-file" class="file-upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose Image
+                        </label>
+                        <input type="file" id="vouch-file" accept="image/*" style="display: none;">
+                        <span id="file-name" class="file-name-text">No file chosen</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <input type="text" id="vouch-role" placeholder="e.g. Pro Gamer">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="vouch-message" placeholder="Write the vouch here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Submit Vouch</button>
+                <p id="vouch-status" class="form-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="view-modal" class="modal-overlay">
+        <div class="modal-content large">
+            <span class="close-modal">&times;</span>
+            <h3>All Client Vouches</h3>
+            <div id="vouches-list-container" class="vouches-grid-view">
+                <p class="loading-text">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
