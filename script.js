@@ -1,10 +1,9 @@
-// --- SUPABASE CONFIGURATION ---
+
 const SUPABASE_URL = 'https://kjhcsvciwneqccqrejqr.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_RXAwpWWYdAePzggVecWmvg_2kSgv8gB';
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// --- Loading Screen Logic ---
 function startStatsAnimation() {
     const statsSection = document.querySelector('.stats-row');
     const statNumbers = document.querySelectorAll('.counter');
@@ -45,14 +44,14 @@ function startStatsAnimation() {
     if (statsSection) statsObserver.observe(statsSection);
 }
 
-// Init Load
+
 window.addEventListener('load', () => {
     const loader = document.getElementById('loading-screen');
     
-    // 2.5 seconds delay
+  
     setTimeout(() => {
         loader.classList.add('fade-out');
-        // Start watching for stats only after loader fades
+       
         startStatsAnimation();
     }, 2500);
 
@@ -60,11 +59,10 @@ window.addEventListener('load', () => {
         loader.remove();
     });
     
-    // Load vouches immediately
+ 
     loadVouchesToMarquee();
 });
 
-// --- VOUCH SYSTEM LOGIC ---
 async function loadVouchesToMarquee() {
     const track = document.getElementById('marquee-track');
     
@@ -79,7 +77,7 @@ async function loadVouchesToMarquee() {
     }
 
     const generateCard = (vouch) => {
-        // Handle Image vs Icon
+     
         let avatarHTML = `<i class="fas fa-user"></i>`;
         if (vouch.avatar_url) {
             avatarHTML = `<img src="${vouch.avatar_url}" alt="${vouch.name}">`;
@@ -101,7 +99,7 @@ async function loadVouchesToMarquee() {
         </div>`;
     };
 
-    // Duplicate logic for smooth scroll
+   
     const cardsHTML = data.map(v => generateCard(v)).join('');
     const multiplier = data.length < 5 ? 6 : 4;
     track.innerHTML = new Array(multiplier).fill(cardsHTML).join('');
@@ -109,7 +107,7 @@ async function loadVouchesToMarquee() {
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Mobile Menu
+   
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     if (hamburger) {
@@ -129,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scroll
+  
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('show');
@@ -138,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
     document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-    // --- MODALS ---
+  
     const addModal = document.getElementById('add-modal');
     const viewModal = document.getElementById('view-modal');
     const openAddBtn = document.getElementById('open-add-modal');
@@ -168,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target == viewModal) viewModal.classList.remove('active');
     });
 
-    // File Input Visual Update
     if(fileInput) {
         fileInput.addEventListener('change', () => {
             if(fileInput.files.length > 0) {
@@ -180,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ADD VOUCH
+   
     if(addVouchForm) {
         addVouchForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -203,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let avatarUrl = null;
 
             try {
-                // Upload Image
+               
                 if (file) {
                     const fileName = `${Date.now()}-${file.name}`;
                     const { data: uploadData, error: uploadError } = await supabase
@@ -217,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     avatarUrl = publicData.publicUrl;
                 }
 
-                // Insert into DB
+               
                 const { error: insertError } = await supabase
                     .from('vouches')
                     .insert([{ name, role, message, avatar_url: avatarUrl }]);
@@ -229,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 addVouchForm.reset();
                 fileNameDisplay.textContent = "No file chosen";
                 
-                loadVouchesToMarquee(); // Refresh marquee
+                loadVouchesToMarquee(); 
                 
                 setTimeout(() => {
                     modalLoader.classList.add('hidden');
@@ -246,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // FETCH LIST
     async function fetchVouchesList() {
         vouchesListContainer.innerHTML = "<p class='loading-text'>Loading...</p>";
         const { data, error } = await supabase
@@ -276,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- CONTACT FORM ---
+   
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 

@@ -1,4 +1,4 @@
-/* --- Variables & Reset --- */
+
 :root {
     --bg-dark: #0b0d12;
     --bg-card: #11141b;
@@ -23,7 +23,7 @@ html { scroll-behavior: smooth; }
     display: inline-block;
 }
 
-/* --- LOADING SCREEN STYLES --- */
+
 #loading-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background-color: var(--bg-dark); z-index: 9999;
@@ -76,7 +76,6 @@ html { scroll-behavior: smooth; }
     100% { width: 0%; margin-left: 100%; }
 }
 
-/* --- GLOBAL BODY --- */
 body {
     background-color: var(--bg-dark); color: var(--text-white);
     font-family: var(--font-main); line-height: 1.6;
@@ -87,7 +86,7 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 .text-center { text-align: center; }
 
-/* === BUTTONS === */
+
 .btn {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 12px 24px; border-radius: 8px; font-weight: 600;
@@ -102,7 +101,7 @@ ul { list-style: none; }
 .btn-secondary { background: transparent; border: 1px solid var(--border-color); color: var(--text-white); }
 .btn-secondary:hover { border-color: var(--text-white); background: rgba(255,255,255,0.05); }
 
-/* === NAVBAR === */
+
 .navbar {
     position: fixed; top: 0; width: 100%; background: rgba(11, 13, 18, 0.85);
     backdrop-filter: blur(12px); z-index: 1000;
@@ -125,7 +124,7 @@ ul { list-style: none; }
 .nav-links a:hover::after { width: 100%; }
 .hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
 
-/* === HERO === */
+
 .hero {
     height: auto; min-height: 100vh; padding-top: 120px; padding-bottom: 80px;
     display: flex; align-items: center; justify-content: center;
@@ -151,7 +150,7 @@ ul { list-style: none; }
     display: inline-block; animation: pulseGlowBlue 4s infinite ease-in-out;
 }
 
-/* MODIFIED STYLE FOR MBAPPE TEXT */
+
 .hero-name {
     font-size: 4.5rem;
     line-height: 1;
@@ -162,7 +161,6 @@ ul { list-style: none; }
     text-transform: uppercase;
 }
 
-/* Gradient parts */
 .hero-name span {
     background: var(--primary-gradient);
     -webkit-background-clip: text;
@@ -171,7 +169,7 @@ ul { list-style: none; }
     animation: pulseGlowBlue 4s infinite ease-in-out;
 }
 
-/* White text part override */
+
 .hero-name .white-part {
     background: none;
     -webkit-text-fill-color: var(--text-white);
@@ -215,7 +213,7 @@ ul { list-style: none; }
     background: linear-gradient(to bottom, var(--primary), transparent); border-radius: 2px;
 }
 
-/* === ABOUT === */
+
 .about-section { padding: 120px 0; }
 .section-tag {
     font-weight: 700; font-size: 0.85rem; letter-spacing: 1px;
@@ -257,7 +255,7 @@ ul { list-style: none; }
 .avatars img:first-child { margin-left: 0; }
 .avatars img:hover { transform: translateY(-5px) scale(1.1); z-index: 10; border-color: var(--primary); }
 
-/* === VOUCHES === */
+
 .vouches-section {
     padding: 80px 0; overflow: hidden; background: #0e1015;
     border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
@@ -294,7 +292,7 @@ ul { list-style: none; }
 .stars i { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; }
 .vouch-card p { font-size: 0.9rem; color: var(--text-gray); font-style: italic; line-height: 1.5; }
 
-/* === MODAL & UPLOAD === */
+
 .vouch-buttons { margin-top: 40px; display: flex; justify-content: center; gap: 20px; }
 .modal-overlay {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -316,13 +314,13 @@ ul { list-style: none; }
 .vouches-grid-view { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .loading-text { text-align: center; color: var(--text-gray); width: 100%; }
 
-/* Custom Scrollbar for Modal */
+
 .modal-content.large::-webkit-scrollbar { width: 8px; }
 .modal-content.large::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.03); border-radius: 0 16px 16px 0; }
 .modal-content.large::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
 .modal-content.large::-webkit-scrollbar-thumb:hover { background: #0096b4; }
 
-/* Modal Loader */
+
 .modal-loader {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(11, 13, 18, 0.95); z-index: 10; display: flex; flex-direction: column;
@@ -336,7 +334,7 @@ ul { list-style: none; }
 }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* File Upload */
+
 .file-upload-btn {
     display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color); padding: 10px 15px; border-radius: 8px; cursor: pointer;
@@ -345,7 +343,7 @@ ul { list-style: none; }
 .file-upload-btn:hover { border-color: var(--primary); color: var(--text-white); background: rgba(0, 180, 216, 0.1); }
 .file-name-text { display: block; font-size: 0.8rem; color: var(--text-gray); margin-top: 5px; text-align: center; font-style: italic; }
 
-/* === SERVICES & VALUES & PORTFOLIO === */
+
 .services-section { padding: 100px 0; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
 .service-card {
@@ -384,9 +382,9 @@ ul { list-style: none; }
     width: 80px; height: 80px; background: #1f2937; border-radius: 50%;
     margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
     font-size: 1.5rem; font-weight: 700; position: relative;
-    /* Removed overflow: hidden so green icon can sit on top */
+ 
 }
-/* New style for portfolio images */
+
 .avatar img {
     width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
     border: 2px solid rgba(255,255,255,0.1); 
@@ -396,13 +394,13 @@ ul { list-style: none; }
     position: absolute; bottom: 0; right: 0; width: 24px; height: 24px;
     background: #111; border-radius: 50%; display: flex; align-items: center;
     justify-content: center; font-size: 0.8rem; color: #fff; border: 2px solid var(--bg-card);
-    z-index: 2; /* Ensure icon is on top of image */
+    z-index: 2; 
 }
 
-/* --- KICK ICON STYLE --- */
+
 .platform-icon.kick-bg {
-    background: #53FC18; /* Official Kick Green */
-    color: #000000;      /* Black Icon text */
+    background: #53FC18;
+    color: #000000;   
     border-color: #53FC18; 
     display: flex; align-items: center; justify-content: center;
 }
@@ -414,7 +412,7 @@ ul { list-style: none; }
 .roster-cta { text-align: center; margin-top: 50px; color: var(--text-gray); }
 .link-text { margin-left: 10px; font-weight: 600; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; }
 
-/* === CONTACT === */
+
 .contact-section { padding: 120px 0; }
 .contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; margin-top: 60px; }
 .contact-form-wrapper, .contact-info-wrapper { background: var(--bg-card); border: 1px solid var(--border-color); padding: 40px; border-radius: 16px; }
@@ -441,7 +439,7 @@ ul { list-style: none; }
 .form-status.success { color: #10b981; }
 .form-status.error { color: #ef4444; }
 
-/* === FOOTER === */
+
 .footer { border-top: 1px solid var(--border-color); padding: 60px 0 30px; background: #080a0e; }
 .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
 .footer-left p { color: var(--text-gray); font-size: 0.9rem; margin-top: 10px; }
@@ -452,7 +450,7 @@ ul { list-style: none; }
 .footer-links { display: flex; gap: 20px; }
 .footer-links a:hover { color: var(--primary); }
 
-/* === ANIMATIONS & MOBILE === */
+
 @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 .hidden { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .show { opacity: 1; transform: translateY(0); }
@@ -463,13 +461,13 @@ ul { list-style: none; }
 @media (max-width: 992px) { .services-grid, .creators-grid, .values-grid { grid-template-columns: repeat(2, 1fr); } .hero-title { font-size: 4rem; } }
 @media (max-width: 768px) {
     .nav-links { display: none; } .hamburger { display: block; } .hero-title { font-size: 2.8rem; }
-    /* Added mobile style for hero-name */
+   
     .hero-name { font-size: 2.5rem; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; } .about-image-card { height: 300px; }
     .stats-row { flex-direction: column; gap: 30px; } .services-grid, .creators-grid, .values-grid { grid-template-columns: 1fr; }
     .vouches-grid-view { grid-template-columns: 1fr; } .vouch-buttons { flex-direction: column; align-items: center; }
     
-    /* FIX: Hero height + Scroll Indicator on Mobile */
+   
     .hero { height: auto; min-height: 100vh; padding-top: 120px; padding-bottom: 80px; }
     .scroll-indicator-container { position: relative; bottom: auto; margin-top: 50px; }
     
