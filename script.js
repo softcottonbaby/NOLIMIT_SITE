@@ -2,7 +2,7 @@
 const SUPABASE_URL = 'https://kjhcsvciwneqccqrejqr.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_RXAwpWWYdAePzggVecWmvg_2kSgv8gB';
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 function startStatsAnimation() {
     const statsSection = document.querySelector('.stats-row');
